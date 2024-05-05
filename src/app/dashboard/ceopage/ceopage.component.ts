@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-ceopage',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./ceopage.component.css']
 })
 export class CeopageComponent {
-
+ 
 }

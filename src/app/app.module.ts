@@ -18,6 +18,7 @@ import { CeopageComponent } from './dashboard/ceopage/ceopage.component';
 import { EmployePageComponent } from './dashboard/employe-page/employe-page.component';
 import { FooterComponent } from './footer/footer.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
