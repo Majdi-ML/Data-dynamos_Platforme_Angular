@@ -4,38 +4,48 @@
     </div>
     <nav class="navbar-light">
       <ul class="navbar-nav flex-column">
-        <li class="nav-item">
+        <!-- Bouton Employee -->
+        <li class="nav-item" *ngIf="isManager">
           <a class="nav-link text-white" routerLink="/employee" routerLinkActive="active">
             <mat-icon>person</mat-icon> Employee
           </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link text-white" routerLink="/ceopage" routerLinkActive="active">
-              <mat-icon>business_center</mat-icon> CEO
-            </a>
-          </li>
-          
-        <li class="nav-item">
+  
+        <!-- Bouton CEO -->
+        <li class="nav-item" *ngIf="isCEO">
+          <a class="nav-link text-white" routerLink="/ceopage" routerLinkActive="active">
+            <mat-icon>business_center</mat-icon> CEO
+          </a>
+        </li>
+  
+        <!-- Bouton Salary -->
+        <li class="nav-item" *ngIf="isCEO || isManager">
           <a class="nav-link text-white" routerLink="/salary" routerLinkActive="active">
             <mat-icon>attach_money</mat-icon> Salary
           </a>
         </li>
-        <li class="nav-item">
+  
+        <!-- Bouton Leave -->
+        <li class="nav-item" *ngIf="isCEO || isManager">
           <a class="nav-link text-white" routerLink="/leave" routerLinkActive="active">
             <mat-icon>calendar_today</mat-icon> Leave
           </a>
         </li>
-        <li class="nav-item">
+  
+        <!-- Bouton Attendance -->
+        <li class="nav-item" *ngIf="isManager">
           <a class="nav-link text-white" routerLink="/attendance" routerLinkActive="active">
             <mat-icon>event_available</mat-icon> Attendance
           </a>
         </li>
-        <li class="nav-item">
+  
+        <!-- Bouton Training -->
+        <li class="nav-item" *ngIf="isManager">
           <a class="nav-link text-white" routerLink="/training" routerLinkActive="active">
             <mat-icon>school</mat-icon> Training
           </a>
         </li>
-        <!-- Ajoutez des icônes pour les autres liens de navigation de la même manière -->
       </ul>
     </nav>
   </div>
+  
