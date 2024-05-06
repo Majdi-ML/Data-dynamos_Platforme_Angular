@@ -1,0 +1,35 @@
+.sidebar {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  .sidebar .logo {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar .logo img {
+    width: 100px;
+    height: auto;
+  }
+  
+  .sidebar .nav-item {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar .nav-link {
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .sidebar .nav-link.active,
+  .sidebar .nav-link:hover {
+    background-color: #f5a623;
+    color: #fff;
+  }
