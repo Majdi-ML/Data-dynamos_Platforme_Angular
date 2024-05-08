@@ -1,8 +1,32 @@
 <app-navbar></app-navbar>
 
-
+<div class="container">
+    <input type="text" (input)="onSearchChange($event)" placeholder="Search..." class="form-control mb-3">
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th>CODE</th>
+      <th>NAME_EMP</th>
+      <th>SEXE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngIf="filteredData.length > 0; else noData">
+      <tr *ngFor="let row of filteredData" id="tableRow">
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+      </tr>
+    </ng-container>
+    <ng-template #noData>
+      <tr>
+        <td colspan="3">No data to display.</td>
+      </tr>
+    </ng-template>
+  </tbody>
+</table>
+  <div>
 <app-sidenavbar></app-sidenavbar>
-
 
 <footer class="bg-dark text-white fixed-bottom">
     <div class="container">
