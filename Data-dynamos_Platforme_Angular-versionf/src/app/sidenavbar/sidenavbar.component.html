@@ -1,0 +1,51 @@
+<div class="sidebar bg-dark">
+    <div class="logo text-center">
+      <img src="assets/images/test2122.png" alt="Company Logo" class="img-fluid">
+    </div>
+    <nav class="navbar-light">
+      <ul class="navbar-nav flex-column">
+        <!-- Bouton Employee -->
+        <li class="nav-item" *ngIf="isManager">
+          <a class="nav-link text-white" routerLink="/employee" routerLinkActive="active">
+            <mat-icon>person</mat-icon> Employee
+          </a>
+        </li>
+  
+        <!-- Bouton CEO -->
+        <li class="nav-item" *ngIf="isCEO">
+          <a class="nav-link text-white" routerLink="/ceopage" routerLinkActive="active">
+            <mat-icon>business_center</mat-icon> CEO
+          </a>
+        </li>
+  
+        <!-- Bouton Salary -->
+        <li class="nav-item" *ngIf="isCEO || isManager">
+          <a class="nav-link text-white" routerLink="/salary" routerLinkActive="active">
+            <mat-icon>attach_money</mat-icon> Salary
+          </a>
+        </li>
+  
+        <!-- Bouton Leave -->
+        <li class="nav-item" *ngIf="isCEO || isManager">
+          <a class="nav-link text-white" routerLink="/leave" routerLinkActive="active">
+            <mat-icon>calendar_today</mat-icon> Leave
+          </a>
+        </li>
+  
+        <!-- Bouton Attendance -->
+        <li class="nav-item" *ngIf="isManager">
+          <a class="nav-link text-white" routerLink="/attendance" routerLinkActive="active">
+            <mat-icon>event_available</mat-icon> Attendance
+          </a>
+        </li>
+  
+        <!-- Bouton Training -->
+        <li class="nav-item" *ngIf="isManager">
+          <a class="nav-link text-white" routerLink="/training" routerLinkActive="active">
+            <mat-icon>school</mat-icon> Training
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  

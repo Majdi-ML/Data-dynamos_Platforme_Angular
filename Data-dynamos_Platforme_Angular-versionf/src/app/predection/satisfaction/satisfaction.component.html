@@ -1,0 +1,73 @@
+<app-navbar></app-navbar>
+<app-sidenavbar></app-sidenavbar>
+
+<div class="container mt-5">
+  <form>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="empName">Nom de l'employé :</label>
+          <input type="text" class="form-control" id="empName" [(ngModel)]="empName" name="empName" placeholder="Entrez le nom de l'employé">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="department">Département :</label>
+          <input type="text" class="form-control" id="department" [(ngModel)]="department" name="department" placeholder="Entrez le département">
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" (click)="fetchPredictions()">Rechercher</button>
+  </form>
+</div>
+
+<div class="container mt-3" *ngIf="predictions.length > 0">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h2 class="text-center mb-3">Prédictions de satisfaction des employés :</h2>
+      <div class="card mb-3" *ngFor="let prediction of predictions">
+        <div class="card-body text-dark">
+          <h5 class="card-title">{{ prediction.NAME_EMP }}</h5>
+          <p class="card-text">Diplôme : {{ prediction.TYPE_DIPLOMA }}</p>
+          <p class="card-text">Années d'expérience : {{ prediction.EXP_YEARS }}</p>
+          <p class="card-text">Genre : {{ prediction.GENDER }}</p>
+          <p class="card-text">Poste : {{ prediction.POSITION }}</p>
+          <p class="card-text">Satisfaction prédite : {{ prediction.predicted_satisfaction }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-3" *ngIf="errorMessage">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="alert alert-danger" role="alert">
+        {{ errorMessage }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="bg-dark text-white fixed-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="text-center">Copyright © 2024 DATA-DYNAMOS</p>
+      </div>
+      <div class="col-md-6">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Privacy Policy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Terms of Use</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
